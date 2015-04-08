@@ -3,9 +3,9 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
+Calais = require('calais').Calais
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var routes = require('./routes');
 
 var app = express();
 
@@ -20,8 +20,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.get('/heatmap',  users);
+app.get('/', function(req, res) {
+  res.render('index', { title: 'Express' });
+});
+app.get('/match', function(req, res) {
+  res.render('match', { title: 'Express' });
+});
+app.get('/modulematch', function(req, res) {
+  res.render('match_module', { title: 'Express' });
+});
+app.get('/example/:content',  routes.example.calais);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

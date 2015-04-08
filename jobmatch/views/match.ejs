@@ -1,0 +1,51 @@
+<%- include head.ejs %>
+<section class="search container content-section text-center">
+    <div class="container">
+        <div class="row">
+            <div class="span6" id="search">
+                <div class="well">
+                    <h1>Search for a job:</h1>
+                    <input type="text" id="search-input" placeholder="Job Keywords">
+                    <button class="btn" id="search-go">Search</button>
+                </div>
+            </div>
+            <div class="span6" id="list">
+                <div class="well">
+                    <h2>Select the job you want:</h2>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>SOC Code</th>
+                                <th>Job Title</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span6" id="info">
+                <div class="well">
+                    <h2>Job Information</h2>
+                    <div id="info-box">
+                        <h3></h3>
+                        <p class="first"></p>
+                        <p class="second"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="span6" id="graph">
+                <div class="well">
+                    <h2>Pay Information</h2>
+                    <div id="graph-box"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<%- include foot.ejs %>

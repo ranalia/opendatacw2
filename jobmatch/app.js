@@ -21,13 +21,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Jobmatch' });
 });
 app.get('/match', function(req, res) {
-  res.render('match', { title: 'Express' });
+  res.render('match', { title: 'Jobmatch' });
 });
 app.get('/modulematch', function(req, res) {
-  res.render('match_module', { title: 'Express' });
+  res.render('match_module', { title: 'Jobmatch' });
 });
 app.get('/example/:content',  routes.example.calais);
 

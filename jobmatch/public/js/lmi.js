@@ -55,8 +55,36 @@ $(function() {
                 var tr = $("<tr><td>" + e.id + "</td><td>" + e.title + "</td></tr>");
                 (function(tr, vacancies) {
                     tr.click(function() {
+                        var description=(e.summary).replace(/\//g," "); //escape slash in parameter
                         $("#info-box p.first").text(e.summary);
-                        $.get("/example/"+e.summary);//alert("/example/"+e.summary);
+                        $.get("/example/"+description,function(data){
+                            $("#keywords table tbody").empty();
+                            $.each(data,function(i, e){
+
+                                    if(data[i]._typeGroup=="topics"){
+                                        var k=$("<tr><td>"+data[i]._typeGroup+"</td><td></td><td>" +data[i].categoryName+"</td></tr>");
+                                    }else if (data[i]._typeGroup=="socialTag"){
+                                        var k=$("<tr><td>"+data[i]._typeGroup+"</td><td></td><td>" +data[i].name+"</td></tr>");
+                                    }else if (data[i]._typeGroup=="entities"){
+                                        var k=$("<tr><td>"+data[i]._typeGroup+"</td><td>"+data[i]._type+"</td><td>" +data[i].name+"</td></tr>")
+                                    }
+                                    $("#keywords table tbody").append(k);
+                            })
+                                /*var len=data.length;
+                                var k;
+                                for(i=0; i<len; i++){
+                                    console.log(data[i]._typeGroup);
+                                    if(data[i]._typeGroup=="topics"){
+                                        console.log(data[i].categoryName);
+                                    }else if (data[i]._typeGroup=="socialTag"){
+                                        console.log(data[i].name)
+                                    }else if (data[i]._typeGroup=="entities"){
+                                        console.log(data[i]._type);
+                                        console.log(data[i].name);
+                                    }
+                                }*/
+                            
+                        });
                         //getVacancies(vacancies);
                     });
                 })(tr, e.id);

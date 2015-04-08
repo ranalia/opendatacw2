@@ -32,21 +32,6 @@ $(function() {
 });
 
 // modulematch, find keywords
-
-var getVacancies = function(vacancies) {
-    $.get("http://api.lmiforall.org.uk/api/v1/soc/code/" + soc, function(data) {
-        $("#info-box h3").text(data.title);
-        $("#info-box p.first").text(data.description);
-        $("#info-box p.second").text(data.tasks);
-    });
-    $.get("http://api.lmiforall.org.uk/api/v1/ashe/estimatePay",
-    { soc: soc, coarse: "false", breakdown: "gender"},
-    function(data) {
-        $("#graph-box").html("<p><b>Male:</b> " + data.series[0].breakdown[1].estpay + " GBP/week </p>" +
-            "<p><b>Female:</b> " + data.series[0].breakdown[0].estpay + " GBP/week </p>");
-    });
-};
-
 $(function() {
     $("#search-vacancies").click(function() {
         $.get("http://api.lmiforall.org.uk/api/v1/vacancies/search", { keywords: $("#search-input").val() }, function(data, status) {
@@ -71,7 +56,6 @@ $(function() {
                                     $("#keywords table tbody").append(k);
                             })
                         });
-                        //getVacancies(vacancies);
                     });
                 })(tr, e.id);
                 $("#list table tbody").append(tr);

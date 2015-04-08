@@ -31,7 +31,7 @@ $(function() {
     });
 });
 
-// API Demo JavaScript
+// modulematch, find keywords
 
 var getVacancies = function(vacancies) {
     $.get("http://api.lmiforall.org.uk/api/v1/soc/code/" + soc, function(data) {
@@ -70,20 +70,6 @@ $(function() {
                                     }
                                     $("#keywords table tbody").append(k);
                             })
-                                /*var len=data.length;
-                                var k;
-                                for(i=0; i<len; i++){
-                                    console.log(data[i]._typeGroup);
-                                    if(data[i]._typeGroup=="topics"){
-                                        console.log(data[i].categoryName);
-                                    }else if (data[i]._typeGroup=="socialTag"){
-                                        console.log(data[i].name)
-                                    }else if (data[i]._typeGroup=="entities"){
-                                        console.log(data[i]._type);
-                                        console.log(data[i].name);
-                                    }
-                                }*/
-                            
                         });
                         //getVacancies(vacancies);
                     });

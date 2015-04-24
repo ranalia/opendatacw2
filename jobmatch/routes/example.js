@@ -3,10 +3,7 @@ exports.calais=function(req,res){
 calais.set('content', req.params.content);
 //console.log(calais);
 calais.fetch(function (err,result) {
-	var param={
-		"result":result
-	};
-	var len=result.length;
+/*	var len=result.length;
 	for(i=0; i<len; i++){
 		console.log(result[i]._typeGroup);
 		if(result[i]._typeGroup=="topics"){
@@ -17,10 +14,8 @@ calais.fetch(function (err,result) {
 			console.log(result[i]._type);
 			console.log(result[i].name);
 		}
-	}
-
-	
-	//res.render('match_module',param);
+	}*/
+	//console.log(result);
 	res.send(result);
 });
 };

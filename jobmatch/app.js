@@ -3,7 +3,8 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-Calais = require('calais').Calais
+
+Calais = require('calais').Calais;
 
 var routes = require('./routes');
 
@@ -30,6 +31,8 @@ app.get('/modulematch', function(req, res) {
   res.render('match_module', { title: 'Jobmatch' });
 });
 app.get('/example/:content',  routes.example.calais);
+
+app.get('/database',  routes.database.db);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

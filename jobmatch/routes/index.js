@@ -1,4 +1,5 @@
 /* GET home page. */
 module.exports = {
-example : require('./example')
+example : require('./example'),
+database : require('./database')
 };

@@ -1,5 +1,5 @@
 // API Demo JavaScript
-
+/*
 var getInfo = function(soc) {
     $.get("http://api.lmiforall.org.uk/api/v1/soc/code/" + soc, function(data) {
         $("#info-box h3").text(data.title);
@@ -29,7 +29,7 @@ $(function() {
             });
         }, "json");
     });
-});
+});*/
 
 // modulematch, find keywords
 $(function() {
@@ -42,7 +42,10 @@ $(function() {
                     tr.click(function() {
                         var description=(e.summary).replace(/\//g," "); //escape slash in parameter
                         $("#info-box p.first").text(e.summary);
-                        $.get("/example/"+description,function(data){
+                        /*$.get("http://jobsearch.direct.gov.uk/GetJob.aspx?JobID="+e.id,function(data,status){
+                            alert("hello");
+                        });*/
+                        $.get("/example/"+encodeURIComponent(description),function(data){
                             $("#keywords table tbody").empty();
                             $.each(data,function(i, e){
 

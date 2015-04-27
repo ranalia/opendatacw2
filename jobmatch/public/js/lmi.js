@@ -44,8 +44,9 @@ $(function() {
                         $("#info-box p.first").text(e.summary);
                         /*$.get("http://jobsearch.direct.gov.uk/GetJob.aspx?JobID="+e.id,function(data,status){
                             alert("hello");
-                        });*/
+                        });*/$("#courses table tbody tr td").remove();
                         $.get("/example/"+encodeURIComponent(description),function(data){
+                            var count=0;
                             $("#keywords table tbody").empty();
                             $.each(data,function(i, e){
 
@@ -57,7 +58,17 @@ $(function() {
                                         var k=$("<tr><td>"+data[i]._typeGroup+"</td><td>"+data[i]._type+"</td><td>" +data[i].name+"</td></tr>")
                                     }
                                     $("#keywords table tbody").append(k);
-                            })
+
+                                    $.get("/database/"+encodeURIComponent(data[i].name),function(data){
+                                        $.each(data,function(i, e){
+                                            count++;
+
+                                            var m=$("<tr><td>"+data[i].courseNo+"</td><td>"+data[i].courseName+"</td><td>" +data[i].point+"</td></tr>")
+                                            if(count<13){$("#courses table tbody").append(m);}
+                                        });
+
+                                    });
+                            });
                         });
                     });
                 })(tr, e.id);

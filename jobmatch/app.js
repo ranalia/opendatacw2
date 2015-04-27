@@ -32,7 +32,7 @@ app.get('/modulematch', function(req, res) {
 });
 app.get('/example/:content',  routes.example.calais);
 
-app.get('/database',  routes.database.db);
+app.get('/database/:content',  routes.database.db);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

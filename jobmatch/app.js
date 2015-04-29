@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var cookieParser = require('cookie-parser');
 
 Calais = require('calais').Calais;
 
@@ -21,6 +22,12 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookieParser());
+app.use(session({
+    secret:"secretssh",
+    resave: true,
+    saveUninitialized: true
+}));
 
 app.get('/', function(req, res) {
   res.render('index', { title: 'Jobmatch' });

@@ -49,24 +49,61 @@ $(function() {
                             //var count=0;
                             $("#keywords table tbody").empty();
                             $.each(data,function(i, e){
+                                /*if(data[i]._typeGroup=="topics"){
+                                    alert(data[i].categoryName);
+                                }else {
+                                    alert(data[i].name);
+                                }*/
+                                
 
                                     if(data[i]._typeGroup=="topics"){
                                         var k=$("<tr><td>"+data[i]._typeGroup+"</td><td></td><td>" +data[i].categoryName+"</td></tr>");
+
+                                        //each keywords search course
+                                        $.get("/database/"+encodeURIComponent(data[i].categoryName),function(data){
+                                            if(data.length>0){
+                                                $("#courses table tbody tr td").remove();
+                                            }
+                                            $.each(data,function(i, e){
+                                                //count++;
+                                                var m=$("<tr><td>"+(i+1)+"</td><td>"+data[i].courseNo+"</td><td>"+data[i].courseName+"</td><td>" +data[i].point+"</td></tr>");
+                                                /*if(count<13){*/$("#courses table tbody").append(m);//}
+                                            });
+
+                                        });
                                     }else if (data[i]._typeGroup=="socialTag"){
                                         var k=$("<tr><td>"+data[i]._typeGroup+"</td><td></td><td>" +data[i].name+"</td></tr>");
+
+                                        //each keywords search course
+                                        $.get("/database/"+encodeURIComponent(data[i].name),function(data){
+                                            if(data.length>0){
+                                                $("#courses table tbody tr td").remove();
+                                            }
+                                            $.each(data,function(i, e){
+                                                //count++;
+                                                var m=$("<tr><td>"+(i+1)+"</td><td>"+data[i].courseNo+"</td><td>"+data[i].courseName+"</td><td>" +data[i].point+"</td></tr>");
+                                                /*if(count<13){*/$("#courses table tbody").append(m);//}
+                                            });
+
+                                        });
                                     }else if (data[i]._typeGroup=="entities"){
-                                        var k=$("<tr><td>"+data[i]._typeGroup+"</td><td>"+data[i]._type+"</td><td>" +data[i].name+"</td></tr>")
+                                        var k=$("<tr><td>"+data[i]._typeGroup+"</td><td>"+data[i]._type+"</td><td>" +data[i].name+"</td></tr>");
+
+                                        //each keywords search course
+                                        $.get("/database/"+encodeURIComponent(data[i].name),function(data){
+                                            if(data.length>0){
+                                                $("#courses table tbody tr td").remove();
+                                            }
+                                            $.each(data,function(i, e){
+                                                //count++;
+                                                var m=$("<tr><td>"+(i+1)+"</td><td>"+data[i].courseNo+"</td><td>"+data[i].courseName+"</td><td>" +data[i].point+"</td></tr>")
+                                                /*if(count<13){*/$("#courses table tbody").append(m);//}
+                                            });
+
+                                        });
                                     }
                                     $("#keywords table tbody").append(k);
 
-                                    $.get("/database/"+encodeURIComponent(data[i].name),function(data){
-                                        $.each(data,function(i, e){
-                                            //count++;
-                                            var m=$("<tr><td>"+(i+1)+"</td><td>"+data[i].courseNo+"</td><td>"+data[i].courseName+"</td><td>" +data[i].point+"</td></tr>")
-                                            /*if(count<13){*/$("#courses table tbody").append(m);//}
-                                        });
-
-                                    });
                             });
                         });
                     });

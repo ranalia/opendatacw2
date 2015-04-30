@@ -42,6 +42,8 @@ app.get('/example/:content',  routes.example.calais);
 
 app.get('/database/:content',  routes.database.db);
 
+app.get('/match/:content',  routes.match.db);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

@@ -4,12 +4,18 @@
         <div class="row">
             <div class="span6" id="search">
                 <div class="well">
-                    <h1>Choose a module:</h1>
-                    <select class="js-example-data-array"></select>
-                    <button class="btn" id="search-go">Search</button>
+                    <h1>Choose a module (Soton ECS):</h1>
+                    <select class="course-array"></select>
+                    <button class="btn" id="search-from-course">Search</button>
                 </div>
             </div>
-            <div class="span6" id="list">
+             <div class="span6" id="course-keywords">
+                <div class="well">
+                    <h2>Select course keywords:</h2>
+                    <div id="course-tag"></div>
+                </div>
+            </div>
+            <div class="span6" id="job-list">
                 <div class="well">
                     <h2>Select the job you want:</h2>
                     <table class="table table-striped">
@@ -26,7 +32,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="span6" id="info">
+            <div class="span6" id="job-info">
                 <div class="well">
                     <h2>Job Information</h2>
                     <div id="info-box">
@@ -36,7 +42,7 @@
                     </div>
                 </div>
             </div>
-            <div class="span6" id="graph">
+            <div class="span6" id="job-graph">
                 <div class="well">
                     <h2>Pay Information</h2>
                     <div id="graph-box"></div>

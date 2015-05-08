@@ -1,0 +1,152 @@
+[
+  {
+    "index":0,
+    "id":4431,
+    "name":"Computer Science   BSc Computer Science"
+  },
+  {
+    "index":1,
+    "id":4432,
+    "name":"Artificial Intelligence   BSc Computer Science"
+  },
+  {
+    "index":2,
+    "id":4433,
+    "name":"Image and Multimedia Systems   BSc Computer Science"
+  },
+  {
+    "index":3,
+    "id":4434,
+    "name":"Distributed Systems & Networks   BSc Computer Science"
+  },
+  {
+    "index":4,
+    "id":4435,
+    "name":"MEng Software Engineering"
+  },
+  {
+    "index":5,
+    "id":4442,
+    "name":"MSc Microelectronics Syst Des"
+  },
+  {
+    "index":6,
+    "id":4443,
+    "name":"Computer Science   MEng Computer Science"
+  },
+  {
+    "index":7,
+    "id":4444,
+    "name":"Artificial Intelligence   MEng Computer Science"
+  },
+  {
+    "index":8,
+    "id":4445,
+    "name":"Distributed Systems & Networks   MEng Computer Science"
+  },
+  {
+    "index":9,
+    "id":4446,
+    "name":"Image and Multimedia Systems   MEng Computer Science"
+  },
+  {
+    "index":10,
+    "id":4463,
+    "name":"BSc IT in Organisations"
+  },
+  {
+    "index":11,
+    "id":4465,
+    "name":"BEng Software Engineering"
+  },
+  {
+    "index":12,
+    "id":4469,
+    "name":"MSc Software Engineering"
+  },
+  {
+    "index":13,
+    "id":4470,
+    "name":"MSc Web Technology"
+  },
+  {
+    "index":14,
+    "id":4471,
+    "name":"MSc System on Chip"
+  },
+  {
+    "index":15,
+    "id":4475,
+    "name":"MSc Artificial Intelligence"
+  },
+  {
+    "index":16,
+    "id":4477,
+    "name":"MEng CompSci with MSS"
+  },
+  {
+    "index":17,
+    "id":4478,
+    "name":"MSc Web Science"
+  },
+  {
+    "index":18,
+    "id":4479,
+    "name":"Nanoelect and Nanotech"
+  },
+  {
+    "index":19,
+    "id":4480,
+    "name":"MSc MEMS"
+  },
+  {
+    "index":20,
+    "id":4481,
+    "name":"MSc Bionanotechnology Inactive"
+  },
+  {
+    "index":21,
+    "id":4482,
+    "name":"MSc Wireless Communications"
+  },
+  {
+    "index":22,
+    "id":4485,
+    "name":"MComp ITO"
+  },
+  {
+    "index":23,
+    "id":4486,
+    "name":"MSc Energy & Sustain w/EPE"
+  },
+  {
+    "index":24,
+    "id":4504,
+    "name":"Euro MSc in Emb Comp Syst (EM)"
+  },
+  {
+    "index":25,
+    "id":4506,
+    "name":"MSc Systems & Signal Proc"
+  },
+  {
+    "index":26,
+    "id":5071,
+    "name":"MSc Photonic Technologies"
+  },
+  {
+    "index":27,
+    "id":5172,
+    "name":"BSc Web Science (Comp Sci)"
+  },
+  {
+    "index":28,
+    "id":5185,
+    "name":"BSc Web Science (SocSci)"
+  },
+  {
+    "index":29,
+    "id":5471,
+    "name":"MSc Cyber Security"
+  }
+]

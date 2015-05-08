@@ -6,10 +6,10 @@ exports.db = function(req, res) {
 	var db = new sqlite3.Database('./db_1.sqlite');
 	var data = { 'courseNo' : jsonData };
 	var course = jsonQuery("courseNo[index=" + req.params.content+ "].id", { data: data }).value;
-	console.log(course);
+	//console.log(course);
 	 db.serialize(function() {
 	 	db.all("SELECT keyword FROM keywordID WHERE course =?",course, function(err, rows) {
-	 		console.log(rows);
+	 		//console.log(rows);
 	 		res.send(rows);
 	 	});
 

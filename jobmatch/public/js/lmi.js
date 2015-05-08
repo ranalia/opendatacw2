@@ -10,6 +10,8 @@ $(function() {
                 (function(tr, vacancies) {
                     tr.click(function() {
                         var description = (e.summary).replace(/\//g, " "); //escape slash in parameter
+                        $("#job-info").remove();
+                        $("#info-box").append("<p id='job-info'>more from: <a href='http://jobsearch.direct.gov.uk/GetJob.aspx?JobID="+e.id+"'>Universal Jobmatch Site</a></p>");
                         $("#info-box p.first").text(e.summary);
                         /*$.get("http://jobsearch.direct.gov.uk/GetJob.aspx?JobID="+e.id,function(data,status){
                             alert("hello");

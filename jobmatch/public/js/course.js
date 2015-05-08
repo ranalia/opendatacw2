@@ -9,11 +9,15 @@ $(".course-array").select2({
 var getInfo = function (keyword){
     $.get("http://api.lmiforall.org.uk/api/v1/vacancies/search", {
             keywords: keyword
-        }, function(data, status) {
-            
+        }, function(data, status) {      
             $("#job-list table tbody").empty();
             $.each(data, function(i, e) {
                 var tr = $("<tr><td>" + e.id + "</td><td>" + e.title + "</td></tr>");
+                    tr.click(function() {
+                        $("#job-info").remove();
+                        $("#info-box").append("<p id='job-info'>more from: <a href='http://jobsearch.direct.gov.uk/GetJob.aspx?JobID="+e.id+"'>Universal Jobmatch Site</a></p>");
+                        $("#info-box p.first").text(e.summary);
+                    });
                 $("#job-list table tbody").append(tr);
             });
         });

@@ -6,3 +6,12 @@
 .select2-container--default{
 	color:black;
 }
+
+.logo{
+	margin: 50px;
+}
+
+.error-msg{
+	padding: 200px;
+	margin-bottom: 250px;
+}
